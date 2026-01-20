@@ -7,7 +7,7 @@ public partial class Player : Creature
 {
 	[Signal]
 	public delegate void LivesChangedEventHandler(int lives);
-
+	
 
 	[Export]
 	public int Lives = 3;
@@ -18,7 +18,10 @@ public partial class Player : Creature
 
 	private AnimatedSprite2D _sprite;
 	private Area2D _hurtBox;
+	private Label _label;
+	private Label _label2;
 
+	
 	public override void _Ready()
 	{
 		CurrentHealth = MaxHealth;
@@ -26,6 +29,12 @@ public partial class Player : Creature
 		
 		_sprite = GetNode<AnimatedSprite2D>("Sprite");
 		_hurtBox = GetNode<Area2D>("HurtBox");
+		_label = GetNode<Label>("HUD/Label");
+		_label2 = GetNode<Label>("HUD/Label2");
+		
+		_label.Text="Health: " + CurrentHealth;
+		_label2.Text="Lives: " + Lives;
+		
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -48,10 +57,12 @@ public partial class Player : Creature
 	public void TakeDamage(int damage)
 	{
 		CurrentHealth -= damage;
+		_label.Text="Health: " + CurrentHealth;
 
 		if (CurrentHealth <= 0)
 		{
 			Lives -= 1;
+			_label2.Text="Lives: " + Lives;
 			EmitSignal(SignalName.LivesChanged, Lives);
 			if (Lives <= 0) {
 				GD.Print("Game Over");
@@ -62,6 +73,7 @@ public partial class Player : Creature
 				GD.Print($"Player Lives: {Lives}");
 				GlobalPosition = _startPosition;
 				CurrentHealth = MaxHealth;
+				_label.Text="Health: 3";
 			}
 		}
 		

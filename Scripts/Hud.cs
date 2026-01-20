@@ -5,9 +5,12 @@ public partial class Hud : Control
 {
 	private Label label;
 
+
 	public override void _Ready()
 	{
-		label = GetNode<Label>("Level/HUD/Label");
+		label = GetNode<Label>("Label");
 		GD.Print("ready");
+
+
 	}
 }
