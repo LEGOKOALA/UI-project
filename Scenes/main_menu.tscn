@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://duyh86nyyh6gm"]
+[gd_scene load_steps=3 format=3 uid="uid://duyh86nyyh6gm"]
 
 [ext_resource type="Texture2D" uid="uid://m5kaiy4520yy" path="res://Assets/Free Pixel Art Forest/Preview/Background.png" id="1_28flt"]
+[ext_resource type="Script" uid="uid://dh2kd2wi15hs6" path="res://Scripts/MainMenu.cs" id="1_48xlc"]
 
-[node name="Main Menu" type="Control"]
+[node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,6 +14,7 @@ offset_right = 209.0
 offset_bottom = 78.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_48xlc")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(369.5, 126.75)
@@ -28,13 +30,13 @@ offset_bottom = 230.0
 scale = Vector2(2, 2)
 alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Start" type="Button" parent="VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Start"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Exit"
@@ -50,3 +52,6 @@ offset_right = 949.0
 offset_bottom = 93.0
 theme_override_font_sizes/font_size = 30
 text = "Game that's a game"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
