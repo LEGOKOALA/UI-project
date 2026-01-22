@@ -13,7 +13,7 @@ offset_bottom = 64.0
 color = Color(0.215902, 0.215902, 0.215902, 0.796078)
 
 [node name="ScoreLabel" type="Label" parent="."]
-anchors_preset = -1
+anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 1000.0
