@@ -19,6 +19,7 @@ public partial class Enemy : Creature
 	private AnimatedSprite2D _sprite;
 	private Area2D _hurtBox;
 	private Timer _attackTimer;
+	private Label _ogrehealth;
 	
 	public override void _Ready()
 	{
@@ -32,6 +33,9 @@ public partial class Enemy : Creature
 		_sprite = GetNode<AnimatedSprite2D>("Sprite");
 		_hurtBox = GetNode<Area2D>("HurtBox");
 		_attackTimer = GetNode<Timer>("AttackTimer");
+		_ogrehealth = GetNode<Label>("Ogre_health");
+		
+		_ogrehealth.Text = "Health: " + CurrentHealth;
 	}
 
 	

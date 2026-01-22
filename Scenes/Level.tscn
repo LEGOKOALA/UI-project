@@ -33,6 +33,7 @@ offset_top = 10.0
 offset_right = 206.0
 offset_bottom = 50.0
 
+[node name="Health" type="Label" parent="Player/HUD"]
 [node name="ColorRect" type="ColorRect" parent="Player/HUD"]
 layout_mode = 0
 offset_left = -358.0
@@ -52,7 +53,7 @@ scale = Vector2(0.13, 0.13)
 theme_override_font_sizes/font_size = 128
 text = "PLACEHOLDER"
 
-[node name="Label2" type="Label" parent="Player/HUD"]
+[node name="Lives" type="Label" parent="Player/HUD"]
 layout_mode = 0
 offset_left = -358.0
 offset_top = -101.0
@@ -62,4 +63,33 @@ scale = Vector2(0.13, 0.13)
 theme_override_font_sizes/font_size = 128
 text = "PLACEHOLDER"
 
+[node name="Ogre" parent="." instance=ExtResource("3_4iqyc")]
+position = Vector2(-46, -1)
+
+[node name="Ogre_health" type="Label" parent="Ogre"]
+offset_left = -53.0
+offset_top = -96.0
+offset_right = 51.0
+offset_bottom = -73.0
+text = "PLACEHOLDER"
+
+[node name="Ogre2" parent="." instance=ExtResource("3_4iqyc")]
+position = Vector2(321, 228)
+
+[node name="Ogre_health" type="Label" parent="Ogre2"]
+offset_left = -54.0
+offset_top = -95.0
+offset_right = 59.0
+offset_bottom = -72.0
+text = "PLACEHOLDER"
+
+[node name="Ogre3" parent="." instance=ExtResource("3_4iqyc")]
+position = Vector2(330, -159)
+
+[node name="Ogre_health" type="Label" parent="Ogre3"]
+offset_left = -53.0
+offset_top = -96.0
+offset_right = 60.0
+offset_bottom = -73.0
+text = "PLACEHOLDER"
 [node name="UI" parent="." instance=ExtResource("4_fuudy")]
