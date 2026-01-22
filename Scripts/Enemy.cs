@@ -59,13 +59,13 @@ public partial class Enemy : Creature
 
 	public void TakeDamage(int damage)
 	{
-		GD.Print("enemy hit");
-		CurrentHealth -= damage;
-		_ogrehealth.Text = "Health: " + CurrentHealth;
-		if (CurrentHealth <= 0)
-		{
-			EmitSignal(SignalName.EnemyDied, Points);
-			QueueFree();
+	GD.Print("enemy hit");
+	CurrentHealth -= damage;
+
+	if (CurrentHealth <= 0)
+	{
+		ScoreManager.Instance.AddScore(Points);
+		QueueFree();
 		}
 	}
 	

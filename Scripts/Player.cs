@@ -66,7 +66,7 @@ public partial class Player : Creature
 			EmitSignal(SignalName.LivesChanged, Lives);
 			if (Lives <= 0) {
 				GD.Print("Game Over");
-				GetTree().Quit();
+				GetTree().ChangeSceneToFile("res://Scenes/game_over.tscn");
 			}
 			else
 			{

@@ -16,6 +16,10 @@ run/main_scene="uid://duyh86nyyh6gm"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="uid://bwehchj7ai5ef"
 
+[autoload]
+
+ScoreManager="*res://Scripts/ScoreManager.cs"
+
 [dotnet]
 
 project/assembly_name="UI Project"

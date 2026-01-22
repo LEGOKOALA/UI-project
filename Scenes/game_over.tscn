@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmx83b3f86kg4"]
+
+[ext_resource type="Texture2D" uid="uid://bld6rcrsen6lk" path="res://Assets/Paralax background Pack/afternoon/Bckg.png" id="1_eoghk"]
+[ext_resource type="Texture2D" uid="uid://dnwaj4mbcjh7x" path="res://Assets/Paralax background Pack/afternoon/Cloud.png" id="2_14u15"]
+[ext_resource type="Texture2D" uid="uid://b54h3dri782ua" path="res://Assets/Paralax background Pack/afternoon/Mountain.png" id="3_j3ryr"]
+[ext_resource type="Script" uid="uid://w4mi8o2q4w8c" path="res://Scripts/EndCamera.cs" id="4_rjluv"]
+
+[node name="GameOver" type="Node2D"]
+
+[node name="Background" type="Parallax2D" parent="."]
+scroll_scale = Vector2(8, 8)
+repeat_size = Vector2(960, 0)
+repeat_times = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(576, 324)
+scale = Vector2(2, 1.985)
+texture = ExtResource("1_eoghk")
+
+[node name="Clouds" type="Parallax2D" parent="."]
+scroll_scale = Vector2(-16, 0)
+scroll_offset = Vector2(0, -120)
+repeat_size = Vector2(960, 0)
+repeat_times = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="Clouds"]
+position = Vector2(576, 324)
+scale = Vector2(2, 1.985)
+texture = ExtResource("2_14u15")
+
+[node name="Mountain" type="Parallax2D" parent="."]
+scroll_scale = Vector2(32, 32)
+scroll_offset = Vector2(0, 376)
+repeat_size = Vector2(960, 0)
+repeat_times = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="Mountain"]
+position = Vector2(576, 324)
+scale = Vector2(2, 1.985)
+texture = ExtResource("3_j3ryr")
+
+[node name="Clouds2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(35, 0)
+scroll_offset = Vector2(0, 192)
+repeat_size = Vector2(960, 0)
+repeat_times = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="Clouds2"]
+position = Vector2(576, 324)
+scale = Vector2(2, 1.985)
+texture = ExtResource("2_14u15")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 328)
+scale = Vector2(0.956553, 1.54588)
+script = ExtResource("4_rjluv")
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
+offset_left = -192.0
+offset_top = -41.0
+offset_right = 201.0
+offset_bottom = 21.0
+
+[node name="Label" type="Label" parent="Camera2D"]
+offset_left = -167.267
+offset_top = -56.9255
+offset_right = 180.733
+offset_bottom = 31.0745
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Game Over"
