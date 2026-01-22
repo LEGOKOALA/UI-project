@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://giltv7yrltbt"]
+[gd_scene load_steps=6 format=4 uid="uid://giltv7yrltbt"]
 
 [ext_resource type="PackedScene" uid="uid://bff8vrk62tyue" path="res://Scenes/TileMap.tscn" id="1_i1qvb"]
 [ext_resource type="PackedScene" uid="uid://bfoummb5wftve" path="res://Scenes/Player.tscn" id="2_7i348"]
 [ext_resource type="PackedScene" uid="uid://v074xqwg3vcg" path="res://Scenes/Ogre.tscn" id="3_4iqyc"]
-[ext_resource type="PackedScene" path="res://Scenes/UI.tscn" id="4_fuudy"]
+[ext_resource type="PackedScene" uid="uid://b35maog6v717o" path="res://Scenes/UI.tscn" id="4_fuudy"]
+[ext_resource type="PackedScene" uid="uid://6f2h52wm0s11" path="res://Scenes/pause_menu.tscn" id="4_xylue"]
 
 [node name="Level" type="Node2D"]
 
@@ -51,6 +52,8 @@ position = Vector2(-166, -10)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
+
+[node name="PauseMenu" parent="Player" instance=ExtResource("4_xylue")]
 
 [node name="HUD" type="Control" parent="Player"]
 layout_mode = 3
