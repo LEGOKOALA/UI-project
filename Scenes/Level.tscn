@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bff8vrk62tyue" path="res://Scenes/TileMap.tscn" id="1_i1qvb"]
 [ext_resource type="PackedScene" uid="uid://bfoummb5wftve" path="res://Scenes/Player.tscn" id="2_7i348"]
 [ext_resource type="PackedScene" uid="uid://v074xqwg3vcg" path="res://Scenes/Ogre.tscn" id="3_4iqyc"]
-[ext_resource type="PackedScene" uid="uid://b35maog6v717o" path="res://Scenes/UI.tscn" id="4_fuudy"]
+[ext_resource type="PackedScene" path="res://Scenes/UI.tscn" id="4_fuudy"]
 
 [node name="Level" type="Node2D"]
 
@@ -13,11 +13,38 @@ tile_map_data = PackedByteArray("AAAbABAAAQASAA8AAAAbAA8AAQALAA8AAAAbAA4AAQALAA8
 [node name="Ogre" parent="." instance=ExtResource("3_4iqyc")]
 position = Vector2(-46, -1)
 
+[node name="Ogre_health" type="Label" parent="Ogre"]
+z_index = 2
+offset_left = -53.0
+offset_top = -96.0
+offset_right = 51.0
+offset_bottom = -73.0
+text = "PLACEHOLDER"
+metadata/_edit_use_anchors_ = true
+
 [node name="Ogre2" parent="." instance=ExtResource("3_4iqyc")]
 position = Vector2(321, 228)
 
+[node name="Ogre_health" type="Label" parent="Ogre2"]
+z_index = 2
+offset_left = -54.0
+offset_top = -95.0
+offset_right = 59.0
+offset_bottom = -72.0
+text = "PLACEHOLDER"
+metadata/_edit_use_anchors_ = true
+
 [node name="Ogre3" parent="." instance=ExtResource("3_4iqyc")]
 position = Vector2(330, -159)
+
+[node name="Ogre_health" type="Label" parent="Ogre3"]
+z_index = 2
+offset_left = -53.0
+offset_top = -96.0
+offset_right = 60.0
+offset_bottom = -73.0
+text = "PLACEHOLDER"
+metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_7i348")]
 position = Vector2(-166, -10)
@@ -33,7 +60,6 @@ offset_top = 10.0
 offset_right = 206.0
 offset_bottom = 50.0
 
-[node name="Health" type="Label" parent="Player/HUD"]
 [node name="ColorRect" type="ColorRect" parent="Player/HUD"]
 layout_mode = 0
 offset_left = -358.0
@@ -42,13 +68,12 @@ offset_right = -285.0
 offset_bottom = -78.0
 color = Color(0.215686, 0.215686, 0.215686, 0.796078)
 
-[node name="Label" type="Label" parent="Player/HUD"]
-texture_filter = 1
+[node name="Health" type="Label" parent="Player/HUD"]
 layout_mode = 0
 offset_left = -358.0
 offset_top = -120.0
-offset_right = 541.0
-offset_bottom = 55.0
+offset_right = -245.0
+offset_bottom = -97.0
 scale = Vector2(0.13, 0.13)
 theme_override_font_sizes/font_size = 128
 text = "PLACEHOLDER"
@@ -63,33 +88,4 @@ scale = Vector2(0.13, 0.13)
 theme_override_font_sizes/font_size = 128
 text = "PLACEHOLDER"
 
-[node name="Ogre" parent="." instance=ExtResource("3_4iqyc")]
-position = Vector2(-46, -1)
-
-[node name="Ogre_health" type="Label" parent="Ogre"]
-offset_left = -53.0
-offset_top = -96.0
-offset_right = 51.0
-offset_bottom = -73.0
-text = "PLACEHOLDER"
-
-[node name="Ogre2" parent="." instance=ExtResource("3_4iqyc")]
-position = Vector2(321, 228)
-
-[node name="Ogre_health" type="Label" parent="Ogre2"]
-offset_left = -54.0
-offset_top = -95.0
-offset_right = 59.0
-offset_bottom = -72.0
-text = "PLACEHOLDER"
-
-[node name="Ogre3" parent="." instance=ExtResource("3_4iqyc")]
-position = Vector2(330, -159)
-
-[node name="Ogre_health" type="Label" parent="Ogre3"]
-offset_left = -53.0
-offset_top = -96.0
-offset_right = 60.0
-offset_bottom = -73.0
-text = "PLACEHOLDER"
 [node name="UI" parent="." instance=ExtResource("4_fuudy")]

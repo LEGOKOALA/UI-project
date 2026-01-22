@@ -61,6 +61,7 @@ public partial class Enemy : Creature
 	{
 	GD.Print("enemy hit");
 	CurrentHealth -= damage;
+	_ogrehealth.Text = "Health: " + CurrentHealth;
 
 	if (CurrentHealth <= 0)
 	{

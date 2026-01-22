@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://duyh86nyyh6gm"]
+[gd_scene load_steps=3 format=3 uid="uid://cwo33suadcffm"]
 
 [ext_resource type="Texture2D" uid="uid://m5kaiy4520yy" path="res://Assets/Free Pixel Art Forest/Preview/Background.png" id="1_28flt"]
 [ext_resource type="Script" uid="uid://dh2kd2wi15hs6" path="res://Scripts/MainMenu.cs" id="1_48xlc"]
